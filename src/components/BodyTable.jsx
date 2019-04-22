@@ -1,4 +1,5 @@
 import React from "react";
+import PersonalPanel from "./PersonalPanel";
 
 function BodyTable(){
   var myStyle = {
@@ -10,7 +11,7 @@ function BodyTable(){
   }
   return(
     <div style={myStyle}>
-      <div>One</div>
+      <div><PersonalPanel/></div>
       <div>Two</div>
       <div>Three</div>
     </div>
