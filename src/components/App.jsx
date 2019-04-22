@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import BodyTable from "./BodyTable";
 
 function App(){
   var myStyle={
@@ -11,6 +12,7 @@ function App(){
       <div style={myStyle}>
         <br/>
         <hr/>
+          <BodyTable/>
       </div>
     </div>
   );
