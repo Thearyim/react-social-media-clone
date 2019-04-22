@@ -1,11 +1,16 @@
 import React from "react";
 import NavbarLeft from "./NavbarLeft";
-import NavbarLeftSection from "./NavbarLeftSection";
+import NavbarRight from "./NavbarRight";
 
 function Header() {
+  var myStyle = {
+    margin: '15px'
+  }
   return(
-    <div>
+    <div style={myStyle}>
       <NavbarLeft/>
+        <p></p>
+      <NavbarRight/>
     </div>
   );
 }
