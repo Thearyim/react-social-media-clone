@@ -10,7 +10,16 @@ function NetworkConnection(props) {
   }
   var imgStyle = {
     width: '90px',
-    padding: '10px'
+    padding: '10px',
+    height: '80px'
+  }
+  var buttonStyle = {
+    backgroundColor: '#1A73CD',
+    width: '90px',
+    height: '30px',
+    fontSize: '12pt',
+    color: 'lightgrey',
+    marginBottom: '10px'
   }
   return(
     <div style={postGridStyle}>
@@ -19,7 +28,7 @@ function NetworkConnection(props) {
       </div>
       <div>
         <h4>{props.name}</h4>
-        <button></button>
+        <button style={buttonStyle}>Add</button>
       </div>
     </div>
   );

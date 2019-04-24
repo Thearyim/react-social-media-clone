@@ -10,10 +10,10 @@ function PersonalPanel() {
     margin: '5px'
   }
   var headerStyle={
-    backgroundColor: 'lightblue'
+    backgroundColor: '#3A8CDF'
   }
   var imgStyle={
-    backgroundColor: 'lightblue',
+    backgroundColor: '#3A8CDF',
     border: '2px solid white',
     borderRadius: '15px',
     width: '100px',
