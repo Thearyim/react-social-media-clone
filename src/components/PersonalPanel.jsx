@@ -1,4 +1,6 @@
 import React from "react";
+import PersonalLink from "./PersonalLink";
+import person from "../assets/images/person.png";
 
 function PersonalPanel() {
   var myStyle = {
@@ -22,13 +24,32 @@ function PersonalPanel() {
   var nameStyle={
     marginLeft: '150px'
   }
+  var linkGrid={
+    display: 'grid',
+    gridTemplateColumns: '33% 33% 33%',
+    padding: '15px'
+  }
   return (
     <div style={myStyle}>
       <div style={headerStyle}>
-        <img style={imgStyle} src='https://www.materialui.co/materialIcons/social/person_white_216x216.png'/>
+        <img style={imgStyle} src={person}/>
       </div>
       <div>
         <p style={nameStyle}>Kellie A. Corrigan</p>
+        <div style={linkGrid}>
+          <div>
+            <PersonalLink
+              name="tweet"/>
+          </div>
+          <div>
+            <PersonalLink
+              name="following"/>
+          </div>
+          <div>
+            <PersonalLink
+              name="followers"/>
+          </div>
+        </div>
       </div>
     </div>
   );

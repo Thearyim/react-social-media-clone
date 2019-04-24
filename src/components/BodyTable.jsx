@@ -1,6 +1,9 @@
 import React from "react";
 import PersonalPanel from "./PersonalPanel";
 import About from "./About";
+import AddPost from "./AddPost";
+import PostList from "./PostList";
+import Network from "./Network";
 
 function BodyTable(){
   var myStyle = {
@@ -16,8 +19,13 @@ function BodyTable(){
         <PersonalPanel/>
         <About/>
       </div>
-      <div>Two</div>
-      <div>Three</div>
+      <div>
+        <AddPost/>
+        <PostList/>
+      </div>
+      <div>
+        <Network/>
+      </div>
     </div>
   );
 }
