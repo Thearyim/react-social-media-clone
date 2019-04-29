@@ -12,12 +12,18 @@ class BodyTable extends React.Component {
     super(props);
     this.state = {
       posts : [
-        {image: image1, title: "Weather", text: "It's sunny today!"}, {image: image2, title: "Workout", text: "I ran 10 miles today!"}
+        {image: image1, title: "Weather", description: "It's sunny today!"}, {image: image2, title: "Workout", description: "I ran 10 miles today!"}
       ]
     };
+    this.handleNewPost = this.handleNewPost.bind(this);
   }
 
-
+  handleNewPost(newPost){
+    const newPosts = this.state.posts.slice();
+    newPosts.push(newPost);
+    this.setState({posts : newPosts});
+    console.log(this.state.posts);
+  }
 
   render(){
     var myStyle = {
@@ -33,7 +39,7 @@ class BodyTable extends React.Component {
           <About/>
         </div>
         <div>
-          <AddPost/>
+          <AddPost onNewPostCreation={this.handleNewPost}/>
           <PostList posts={this.state.posts}/>
         </div>
         <div>

@@ -7,9 +7,7 @@ function PostList(props) {
     <div>
       {props.posts.map((post, index) =>
         <Post
-          image={post.image}
-          title={post.title}
-          text={post.text}
+          post={post}
           key={index}
         />
       )}

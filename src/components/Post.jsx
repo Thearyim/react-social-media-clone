@@ -15,11 +15,11 @@ function Post(props) {
   return(
     <div style={postGridStyle}>
       <div>
-        <img style={imgStyle} src={props.image}></img>
+        <img style={imgStyle} src={props.post.image}></img>
       </div>
       <div>
-        <h4>{props.title}</h4>
-        <p>{props.text}</p>
+        <h4>{props.post.title}</h4>
+        <p>{props.post.description}</p>
       </div>
     </div>
   );

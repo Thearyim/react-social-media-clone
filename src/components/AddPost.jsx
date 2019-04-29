@@ -1,6 +1,10 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
-function AddPost() {
+function AddPost(props) {
+  var _title = null;
+  var _description = null;
+
   var postStyle={
     backgroundColor: 'lightblue',
     padding: '10px',
@@ -29,16 +33,31 @@ function AddPost() {
     paddingLeft: '5px'
   }
 
+  function handleSubmitForm(event){
+    event.preventDefault();
+    console.log(_title.value);
+    console.log(_description.value);
+    props.onNewPostCreation({title: _title.value, description: _description.value, image: ''});
+    _title = '';
+    _description = '';
+  }
+
   return(
     <div style={postStyle}>
-      <form>
+      <form onSubmit={handleSubmitForm}>
         <button style={buttonStyle}></button>
-        <input style={formStyle} placeholder="Post title"></input>
-        <input style={formStyle} placeholder="What's happening?"></input>
+        <input style={formStyle} placeholder="Post title"
+          ref={(input) => {_title=input;}}></input>
+        <input style={formStyle} placeholder="What's happening?"
+          ref={(input) => {_description=input;}}></input>
         <button style={postButtonStyle} type="submit">Post it!</button>
       </form>
     </div>
   );
+}
+
+AddPost.propTypes = {
+  onNewPostCreation : PropTypes.func
 }
 
 export default AddPost;
