@@ -1,16 +1,11 @@
 import React from "react";
 import Post from "./Post";
-import image1 from "../assets/images/image1.jpeg";
-import image2 from "../assets/images/image2.jpg";
+import PropTypes from 'prop-types';
 
-const Posts =[
-  {image: image1, title: "Weather", text: "It's sunny today!"}, {image: image2, title: "Workout", text: "I ran 10 miles today!"}
-];
-
-function PostList() {
+function PostList(props) {
   return(
     <div>
-      {Posts.map((post, index) =>
+      {props.posts.map((post, index) =>
         <Post
           image={post.image}
           title={post.title}
@@ -20,6 +15,10 @@ function PostList() {
       )}
     </div>
   );
+}
+
+PostList.propTypes = {
+  posts: PropTypes.array
 }
 
 export default PostList;
