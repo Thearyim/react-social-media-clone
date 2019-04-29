@@ -23,12 +23,19 @@ function AddPost() {
     color: 'lightgrey',
     margin: '5px'
   }
+  var postButtonStyle = {
+    width: '100px',
+    height: '30px',
+    paddingLeft: '5px'
+  }
 
   return(
     <div style={postStyle}>
       <form>
         <button style={buttonStyle}></button>
+        <input style={formStyle} placeholder="Post title"></input>
         <input style={formStyle} placeholder="What's happening?"></input>
+        <button style={postButtonStyle} type="submit">Post it!</button>
       </form>
     </div>
   );
