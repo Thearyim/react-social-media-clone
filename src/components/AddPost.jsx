@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function AddPost(props) {
   var _title = null;
@@ -37,7 +38,7 @@ function AddPost(props) {
     event.preventDefault();
     console.log(_title.value);
     console.log(_description.value);
-    props.onNewPostCreation({title: _title.value, description: _description.value, image: ''});
+    props.onNewPostCreation({title: _title.value, description: _description.value, image: '', likes: 0, id: v4()});
     _title = '';
     _description = '';
   }

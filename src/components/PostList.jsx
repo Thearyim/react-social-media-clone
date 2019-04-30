@@ -5,10 +5,11 @@ import PropTypes from 'prop-types';
 function PostList(props) {
   return(
     <div>
-      {props.posts.map((post, index) =>
+      {props.posts.map((post) =>
         <Post
           post={post}
-          key={index}
+          key={post.id}
+          onNewLike={props.onNewLike}
         />
       )}
     </div>
@@ -16,7 +17,8 @@ function PostList(props) {
 }
 
 PostList.propTypes = {
-  posts: PropTypes.array
+  posts: PropTypes.array,
+  onNewLike: PropTypes.func
 }
 
 export default PostList;
