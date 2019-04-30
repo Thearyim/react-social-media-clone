@@ -29,32 +29,20 @@ class BodyTable extends React.Component {
   }
 
   findPostIndex(post) {
-    console.log("post index", post);
-    console.log(this.state.posts.indexOf(post));
-    return this.state.posts.indexOf(post);
+    for(let i=0; i < this.state.posts.length; i++){
+      if(post.id == this.state.posts[i].id){
+        return i;
+      }
+    }
   }
 
   handleNewLike(likedPost){
-    console.log(this.findPostIndex(likedPost));
-    const newPost = {image: likedPost.image, title: likedPost.title, description: likedPost.description, likes: likedPost.likes++, id: likedPost.id}
-
-    const newPosts = this.state.posts.map((post) => {
-      console.log(post);
-      console.log(this.newPost);
-      if(post.id = this.likedPost.id){
-        this.newPost;
-      } else {post;}
-    });
-    console.log("newPosts");
-    console.log(newPosts);
-    // console.log(likedPost);
-    // const newPost = {image: likedPost.image, title: likedPost.title, description: likedPost.description, likes: likedPost.likes++, id: likedPost.id}
-    // console.log(newPost);
-    // const newPosts = this.state.posts.splice(this.findPostIndex(likedPost), 1, newPost);
-    // console.log(newPosts);
+    var index = this.findPostIndex(likedPost);
+    console.log(index);
+    const newPost = {image: likedPost.image, title: likedPost.title, description: likedPost.description, likes: likedPost.likes+1, id: likedPost.id}
+    const newPosts = this.state.posts.slice();
+    newPosts.splice(index, 1, newPost);
     this.setState({posts : newPosts});
-
-    console.log(this.state.posts);
   }
 
   render(){
